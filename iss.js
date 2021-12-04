@@ -1,3 +1,31 @@
+//GIVEN SOLUTION BECAUSE IT'S ALMOST 2 AM-----------------------------------------------------
+
+const nextISSTimesForMyLocation = function (callback) {
+    fetchMyIP((error, ip) => {
+        if (error) {
+            return callback(error, null);
+        }
+
+        fetchCoordsByIP(ip, (error, loc) => {
+            if (error) {
+                return callback(error, null);
+            }
+
+            fetchISSFlyOverTimes(loc, (error, nextPasses) => {
+                if (error) {
+                    return callback(error, null);
+                }
+
+                callback(null, nextPasses);
+            });
+        });
+    });
+};
+
+module.exports = { nextISSTimesForMyLocation };
+
+//MY CODE-------------------------------------------------------------------------------------
+
 const request = require('request');
 
 const fetchMyIP = function (callback) {
@@ -17,7 +45,7 @@ const fetchMyIP = function (callback) {
                     console.log("It didn't work!", error);
                     return;
                 }
-                console.log('It worked! Returned coordin8s:', coordin8s);
+                //console.log('It worked! Returned coordin8s:', coordin8s);
             });
             return callback(null, ip);
         }
@@ -46,7 +74,7 @@ const fetchCoordsByIP = function (ip, callback) {
                     console.log("It didn't work!", error);
                     return;
                 }
-                console.log('It worked! Returned flyover times:', flyoverTimes);
+                //console.log('It worked! Returned flyover times:', flyoverTimes);
             });
             return callback(null, coordin8s);
         }
@@ -70,23 +98,4 @@ const fetchISSFlyOverTimes = function (coordin8s, callback) {
     });
 };
 
-/*
-const fetchCoordsByIP = function (ip, callback) {
-    request(`https://freegeoip.app/json/${ip}`, (error, response, body) => {
-        if (error) {
-            callback(error, null);
-            return;
-        }
-
-        if (response.statusCode !== 200) {
-            callback(Error(`Status Code ${response.statusCode} when fetching Coordinates for IP: ${body}`), null);
-            return;
-        }
-
-        const { latitude, longitude } = JSON.parse(body);
-        callback(null, { latitude, longitude });
-    });
-};
-*/
-
-module.exports = { fetchMyIP, fetchCoordsByIP };
+//module.exports = { fetchMyIP };
