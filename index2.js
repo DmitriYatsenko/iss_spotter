@@ -12,6 +12,7 @@ nextISSTimesForMyLocation()
     });
 
 //---------------------------------------------------------------------------------------------
+
 /*
 fetchMyIP()
     .then(fetchCoordsByIP)
