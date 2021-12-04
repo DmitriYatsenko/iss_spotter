@@ -20,7 +20,7 @@ const nextISSTimesForMyLocation = function (callback) {
             });
         });
     });
-};
+}
 
 module.exports = { nextISSTimesForMyLocation };
 
@@ -96,6 +96,6 @@ const fetchISSFlyOverTimes = function (coordin8s, callback) {
             return callback(null, flyoverTimes);
         }
     });
-};
+}
 
 //module.exports = { fetchMyIP };
