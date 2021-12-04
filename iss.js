@@ -23,9 +23,8 @@ const fetchMyIP = function (callback) {
         }
     });
 }
-/*
-const fetchCoordsByIP = function (callback) {
-    request(`https://api.freegeoip.app/json/?apikey=0b8ab680-549a-11ec-9627-63e5cec2c145`, (error, response, body) => {
+
+const fetchCoordsByIP = function (ip, callback) {
     request(`https://freegeoip.app/json/${ip}`, (error, response, body) => {
         if (error) {
             callback(error, null);
@@ -41,12 +40,13 @@ const fetchCoordsByIP = function (callback) {
             const coordin8s = {}; //[latitude, longitude];
             coordin8s['latitude'] = latitude;
             coordin8s['longitude'] = longitude;
-            console.log(coordin8s);
+            //console.log(coordin8s);
             return callback(null, coordin8s);
         }
     });
 }
-*/
+
+/*
 const fetchCoordsByIP = function (ip, callback) {
     request(`https://freegeoip.app/json/${ip}`, (error, response, body) => {
         if (error) {
@@ -63,5 +63,6 @@ const fetchCoordsByIP = function (ip, callback) {
         callback(null, { latitude, longitude });
     });
 };
+*/
 
 module.exports = { fetchMyIP, fetchCoordsByIP };

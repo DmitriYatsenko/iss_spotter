@@ -8,6 +8,7 @@ fetchMyIP((error, ip) => {
     }
     console.log('It worked! Returned IP:', ip);
 });
+
 /*
 fetchCoordsByIP((error, coordin8s) => {
     if (error) {
