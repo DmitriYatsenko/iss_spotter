@@ -1,5 +1,4 @@
 //GIVEN SOLUTION BECAUSE IT'S ALMOST 2 AM-----------------------------------------------------
-
 const { nextISSTimesForMyLocation } = require('./iss');
 
 const printPassTimes = function (passTimes) {
@@ -19,7 +18,6 @@ nextISSTimesForMyLocation((error, passTimes) => {
 })
 
 //MY CODE-------------------------------------------------------------------------------------
-
 /*
 const { fetchMyIP } = require('./iss');
 

@@ -1,5 +1,4 @@
 //GIVEN SOLUTION BECAUSE IT'S ALMOST 2 AM-----------------------------------------------------
-
 const nextISSTimesForMyLocation = function (callback) {
     fetchMyIP((error, ip) => {
         if (error) {
@@ -25,7 +24,6 @@ const nextISSTimesForMyLocation = function (callback) {
 module.exports = { nextISSTimesForMyLocation };
 
 //MY CODE-------------------------------------------------------------------------------------
-
 const request = require('request');
 
 const fetchMyIP = function (callback) {

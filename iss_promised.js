@@ -11,7 +11,6 @@ const nextISSTimesForMyLocation = function () {
 };
 
 //---------------------------------------------------------------------------------------------
-
 const fetchMyIP = function () {
     return request('https://api.ipify.org?format=json');
 }
@@ -22,7 +21,6 @@ const fetchCoordsByIP = function (body) {
 }
 
 //GIVEN SOLUTION-------------------------------------------------------------------------------
-
 const fetchISSFlyOverTimes = function (body) {
     const { latitude, longitude } = JSON.parse(body);
     const url = `http://api.open-notify.org/iss-pass.json?lat=${latitude}&lon=${longitude}`;
@@ -30,7 +28,6 @@ const fetchISSFlyOverTimes = function (body) {
 };
 
 //MY CODE--------------------------------------------------------------------------------------
-
 /*
 const fetchISSFlyOverTimes = function (body) {
     const latitude = JSON.parse(body).latitude;
